@@ -1,0 +1,63 @@
+bootstrapDns:
+  - upstream: 127.0.0.11
+
+upstreams:
+  groups:
+    default:
+      - unbound
+
+customDNS:
+  customTTL: 5m
+  mapping:
+    birds.${domain}: ${oak_ip}
+    bookmarks.${domain}: ${oak_ip}
+    databasus.${domain}: ${oak_ip}
+    db.${domain}: ${oak_ip}
+    docs.${domain}: ${oak_ip}
+    git.${domain}: ${oak_ip}
+    glance.${domain}: ${oak_ip}
+    home.${domain}: ${oak_ip}
+    homebox.${domain}: ${oak_ip}
+    it-tools.${domain}: ${oak_ip}
+    librespeed.${domain}: ${oak_ip}
+    logs.${domain}: ${oak_ip}
+    oak.${domain}: ${oak_ip}
+    omni-tools.${domain}: ${oak_ip}
+    openspeed.${domain}: ${oak_ip}
+    pdf.${domain}: ${oak_ip}
+    prometheus.${domain}: ${oak_ip}
+    rss.${domain}: ${oak_ip}
+    waka.${domain}: ${oak_ip}
+    zwave.${domain}: ${oak_ip}
+
+conditional:
+  fallbackUpstream: false
+  mapping:
+    lan: 10.100.6.1
+
+blocking:
+  denylists:
+    ads:
+      # - https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+      # - https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+      # - https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+      - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.txt
+      # - https://cdn.jsdelivr.net/gh/hagezi/dns-blocklists@latest/wildcard/pro.plus.txt
+    family:
+      - https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social-only/hosts
+  clientGroupsBlock:
+    default:
+      - ads
+    10.100.3.1/24:
+      - ads
+      - family
+
+ports:
+  dns: 53
+  http: 4000
+
+log:
+  level: info
+  format: json
+  timestamp: true
+  privacy: false
