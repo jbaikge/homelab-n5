@@ -26,7 +26,7 @@ customDNS:
     openspeed.${domain}: ${oak_ip}
     pdf.${domain}: ${oak_ip}
     prometheus.${domain}: ${oak_ip}
-    rss.${domain}: ${oak_ip}
+    rss.${domain}: 10.100.10.57
     waka.${domain}: ${oak_ip}
     zwave.${domain}: ${oak_ip}
 

@@ -24,14 +24,28 @@ resource "docker_container" "blocky" {
   ports {
     internal = 53
     external = 53
-    ip       = var.hosts[each.key].service_ip
+    ip       = var.hosts[each.key].service_ipv4
     protocol = "tcp"
   }
 
   ports {
     internal = 53
     external = 53
-    ip       = var.hosts[each.key].service_ip
+    ip       = var.hosts[each.key].service_ipv4
+    protocol = "udp"
+  }
+
+  ports {
+    internal = 53
+    external = 53
+    ip       = var.hosts[each.key].service_ipv6
+    protocol = "tcp"
+  }
+
+  ports {
+    internal = 53
+    external = 53
+    ip       = var.hosts[each.key].service_ipv6
     protocol = "udp"
   }
 
@@ -40,7 +54,7 @@ resource "docker_container" "blocky" {
 
     content = templatefile("${path.module}/files/blocky.yaml", {
       domain = data.sops_file.secrets.data["domain.tld"]
-      oak_ip = var.hosts["oak"].service_ip
+      oak_ip = var.hosts["oak"].service_ipv4
     })
   }
 

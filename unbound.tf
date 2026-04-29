@@ -21,7 +21,7 @@ resource "docker_container" "unbound" {
   ports {
     internal = 53
     external = 5335
-    ip       = var.hosts[each.key].service_ip
+    ip       = var.hosts[each.key].service_ipv4
     protocol = "udp"
   }
 

@@ -98,14 +98,14 @@ resource "docker_container" "traefik" {
   ports {
     internal = 80
     external = 80
-    ip       = var.hosts[each.key].service_ip
+    ip       = var.hosts[each.key].service_ipv4
     protocol = "tcp"
   }
 
   ports {
     internal = 443
     external = 443
-    ip       = var.hosts[each.key].service_ip
+    ip       = var.hosts[each.key].service_ipv4
     protocol = "tcp"
   }
 

@@ -15,7 +15,8 @@ variable "hosts" {
 
   type = map(object({
     provider_host = string
-    service_ip    = string
+    service_ipv4  = string
+    service_ipv6  = string
   }))
 }
 
