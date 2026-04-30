@@ -53,8 +53,12 @@ resource "docker_container" "blocky" {
     file = "/app/config.yml"
 
     content = templatefile("${path.module}/files/blocky.yaml", {
-      domain = data.sops_file.secrets.data["domain.tld"]
-      oak_ip = var.hosts["oak"].service_ipv4
+      domain     = data.sops_file.secrets.data["domain.tld"]
+      ash_ip     = var.old_hosts["ash"]
+      cherry_ip  = var.old_hosts["cherry"]
+      hickory_ip = var.old_hosts["hickory"]
+      maple_ip   = var.old_hosts["maple"]
+      oak_ip     = var.hosts["oak"].service_ipv4
     })
   }
 

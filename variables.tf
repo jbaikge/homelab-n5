@@ -55,3 +55,9 @@ variable "apps" {
     zwave          = string
   })
 }
+
+variable "old_hosts" {
+  description = "Map of old hosts from previous homelab which are still in service"
+
+  type = map(string)
+}
