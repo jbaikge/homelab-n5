@@ -40,6 +40,10 @@ resource "docker_container" "dozzle" {
     value = "8080"
   }
 
+  networks_advanced {
+    name = docker_network.traefik[var.apps.dozzle].id
+  }
+
   volumes {
     container_path = "/etc/localtime"
     host_path      = "/etc/localtime"

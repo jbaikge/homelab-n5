@@ -29,4 +29,8 @@ resource "docker_container" "bentopdf" {
     label = "traefik.http.services.bentopdf.loadbalancer.server.port"
     value = "8080"
   }
+
+  networks_advanced {
+    name = docker_network.traefik[var.apps.bentopdf].id
+  }
 }

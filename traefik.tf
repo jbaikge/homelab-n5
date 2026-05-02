@@ -43,6 +43,7 @@ resource "docker_container" "traefik" {
     # Providers
     "--providers.docker=true",
     "--providers.docker.exposedbydefault=false",
+    "--providers.docker.network=${docker_network.traefik[each.key].name}",
 
     # API & Dashboard
     "--api.dashboard=true",
@@ -93,6 +94,10 @@ resource "docker_container" "traefik" {
   labels {
     label = "traefik.http.routers.dashboard.middlewares"
     value = "dashboard-auth@docker"
+  }
+
+  networks_advanced {
+    name = docker_network.traefik[each.key].id
   }
 
   ports {

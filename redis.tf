@@ -12,7 +12,7 @@ resource "docker_container" "redis" {
   restart  = "unless-stopped"
 
   networks_advanced {
-    name = docker_network.network["database"].id
+    name = docker_network.database.id
   }
 
   ports {

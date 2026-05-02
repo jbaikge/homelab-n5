@@ -15,7 +15,7 @@ customDNS:
     cherry.${domain}: ${cherry_ip}
     databasus.${domain}: ${ash_ip}
     db.${domain}: ${ash_ip}
-    docs.${domain}: ${cherry_ip}
+    docs.${domain}: ${oak_ip}
     git.${domain}: ${hickory_ip}
     glance.${domain}: ${hickory_ip}
     hickory.${domain}: ${hickory_ip}
@@ -28,9 +28,9 @@ customDNS:
     oak.${domain}: ${oak_ip}
     omni-tools.${domain}: ${hickory_ip}
     openspeed.${domain}: ${hickory_ip}
-    pdf.${domain}: ${hickory_ip}
+    pdf.${domain}: ${oak_ip}
     prometheus.${domain}: ${ash_ip}
-    rss.${domain}: ${hickory_ip}
+    rss.${domain}: ${oak_ip}
     waka.${domain}: ${hickory_ip}
     zwave.${domain}: ${maple_ip}
 
