@@ -13,7 +13,7 @@ customDNS:
     birds.${domain}: ${hickory_ip}
     bookmarks.${domain}: ${hickory_ip}
     cherry.${domain}: ${cherry_ip}
-    databasus.${domain}: ${ash_ip}
+    databasus.${domain}: ${oak_ip}
     db.${domain}: ${ash_ip}
     docs.${domain}: ${oak_ip}
     git.${domain}: ${hickory_ip}
