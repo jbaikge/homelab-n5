@@ -9,25 +9,27 @@ upstreams:
 customDNS:
   customTTL: 5m
   mapping:
+    # Host maps
     ash.${domain}: ${ash_ip}
+    cherry.${domain}: ${cherry_ip}
+    hickory.${domain}: ${hickory_ip}
+    maple.${domain}: ${maple_ip}
+    oak.${domain}: ${oak_ip}
+    # App maps
     birds.${domain}: ${hickory_ip}
     bookmarks.${domain}: ${hickory_ip}
-    cherry.${domain}: ${cherry_ip}
     databasus.${domain}: ${oak_ip}
     db.${domain}: ${ash_ip}
     docs.${domain}: ${oak_ip}
     git.${domain}: ${hickory_ip}
     glance.${domain}: ${hickory_ip}
-    hickory.${domain}: ${hickory_ip}
     home.${domain}: ${maple_ip}
     homebox.${domain}: ${hickory_ip}
     it-tools.${domain}: ${hickory_ip}
     logs.${domain}: ${oak_ip}
-    librespeed.${domain}: ${hickory_ip}
-    maple.${domain}: ${maple_ip}
-    oak.${domain}: ${oak_ip}
+    librespeed.${domain}: ${oak_ip}
     omni-tools.${domain}: ${hickory_ip}
-    openspeed.${domain}: ${hickory_ip}
+    openspeed.${domain}: ${oak_ip}
     pdf.${domain}: ${oak_ip}
     prometheus.${domain}: ${ash_ip}
     rss.${domain}: ${oak_ip}
