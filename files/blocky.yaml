@@ -25,10 +25,10 @@ customDNS:
     glance.${domain}: ${hickory_ip}
     home.${domain}: ${maple_ip}
     homebox.${domain}: ${hickory_ip}
-    it-tools.${domain}: ${hickory_ip}
+    it-tools.${domain}: ${oak_ip}
     logs.${domain}: ${oak_ip}
     librespeed.${domain}: ${oak_ip}
-    omni-tools.${domain}: ${hickory_ip}
+    omni-tools.${domain}: ${oak_ip}
     openspeed.${domain}: ${oak_ip}
     pdf.${domain}: ${oak_ip}
     prometheus.${domain}: ${ash_ip}
