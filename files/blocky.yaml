@@ -17,14 +17,13 @@ customDNS:
     oak.${domain}: ${oak_ip}
     # App maps
     birds.${domain}: ${hickory_ip}
-    bookmarks.${domain}: ${hickory_ip}
     databasus.${domain}: ${oak_ip}
     db.${domain}: ${ash_ip}
     docs.${domain}: ${oak_ip}
     git.${domain}: ${hickory_ip}
     glance.${domain}: ${hickory_ip}
     home.${domain}: ${maple_ip}
-    homebox.${domain}: ${hickory_ip}
+    homebox.${domain}: ${oak_ip}
     it-tools.${domain}: ${oak_ip}
     logs.${domain}: ${oak_ip}
     librespeed.${domain}: ${oak_ip}

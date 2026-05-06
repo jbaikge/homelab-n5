@@ -39,7 +39,6 @@ variable "apps" {
     homebox        = string
     it_tools       = string
     librespeed     = string
-    linkding       = string
     miniflux       = string
     mysql          = string
     omni_tools     = string
