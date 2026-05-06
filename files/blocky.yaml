@@ -33,6 +33,7 @@ customDNS:
     pdf.${domain}: ${oak_ip}
     prometheus.${domain}: ${ash_ip}
     rss.${domain}: ${oak_ip}
+    readeck.${domain}: ${oak_ip}
     waka.${domain}: ${oak_ip}
     zwave.${domain}: ${maple_ip}
 

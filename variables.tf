@@ -47,6 +47,7 @@ variable "apps" {
     paperless_ngx  = string
     postgres       = string
     prometheus     = string
+    readeck        = string
     redis          = string
     tika           = string
     traefik        = list(string)
