@@ -9,7 +9,7 @@ resource "docker_container" "tika" {
   name     = "tika"
   hostname = "tika"
   image    = docker_image.tika.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   networks_advanced {
     name = docker_network.paperless.id

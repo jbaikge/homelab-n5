@@ -9,7 +9,7 @@ resource "docker_container" "redis" {
   name     = "redis"
   hostname = "redis"
   image    = docker_image.redis.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   networks_advanced {
     name = docker_network.database.id

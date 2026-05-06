@@ -9,7 +9,7 @@ resource "docker_container" "it_tools" {
   name     = "it-tools"
   hostname = "it-tools"
   image    = docker_image.it_tools.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   labels {
     label = "traefik.enable"

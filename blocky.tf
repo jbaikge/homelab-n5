@@ -11,7 +11,7 @@ resource "docker_container" "blocky" {
   name     = "blocky"
   hostname = "blocky"
   image    = docker_image.blocky[each.key].image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   env = [
     "TZ=${data.sops_file.secrets.data["location.timezone"]}",

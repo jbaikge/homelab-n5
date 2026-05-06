@@ -11,7 +11,7 @@ resource "docker_container" "unbound" {
   name     = "unbound"
   hostname = "unbound"
   image    = docker_image.unbound[each.key].image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   networks_advanced {
     name = docker_network.dns[each.key].id

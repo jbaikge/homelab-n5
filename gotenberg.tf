@@ -9,7 +9,7 @@ resource "docker_container" "gotenberg" {
   name     = "gotenberg"
   hostname = "gotenberg"
   image    = docker_image.gotenberg.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   command = [
     "gotenberg",

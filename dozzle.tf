@@ -14,7 +14,7 @@ resource "docker_container" "dozzle" {
   provider = docker.hosts[var.apps.dozzle]
   name     = "dozzle"
   image    = docker_image.dozzle.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   env = [
     format("DOZZLE_REMOTE_AGENT=%s", join(",", [for v in var.apps.dozzle_agent : "${var.hosts[v].service_ipv4}:7007"]))

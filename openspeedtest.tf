@@ -11,7 +11,7 @@ resource "docker_container" "openspeedtest" {
   name     = "openspeedtest"
   hostname = "openspeedtest"
   image    = docker_image.openspeedtest.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   labels {
     label = "traefik.enable"

@@ -11,7 +11,7 @@ resource "docker_container" "traefik" {
   name     = "traefik"
   hostname = "traefik"
   image    = docker_image.traefik[each.key].image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   env = [
     "CLOUDFLARE_EMAIL=${data.sops_file.secrets.data["cloudflare.email"]}",

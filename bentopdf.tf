@@ -8,7 +8,7 @@ resource "docker_container" "bentopdf" {
   provider = docker.hosts[var.apps.bentopdf]
   name     = "bentopdf"
   image    = docker_image.bentopdf.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   labels {
     label = "traefik.enable"

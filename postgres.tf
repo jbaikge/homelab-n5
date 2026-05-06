@@ -9,7 +9,7 @@ resource "docker_container" "postgres" {
   name     = "postgres"
   hostname = "postgres"
   image    = docker_image.postgres.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   env = [
     "POSTGRES_PASSWORD=${data.sops_file.secrets.data["postgres.password"]}",

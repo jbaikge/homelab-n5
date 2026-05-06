@@ -10,7 +10,7 @@ resource "docker_container" "cloudflared" {
   provider = docker.hosts[each.key]
   name     = "cloudflared"
   image    = docker_image.cloudflared[each.key].image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   command = [
     "tunnel",

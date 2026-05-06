@@ -9,7 +9,7 @@ resource "docker_container" "databasus" {
   name     = "databasus"
   hostname = "databasus"
   image    = docker_image.databasus.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   env = [
   ]

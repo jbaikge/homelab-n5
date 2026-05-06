@@ -9,7 +9,7 @@ resource "docker_container" "miniflux" {
   name     = "miniflux"
   hostname = "miniflux"
   image    = docker_image.miniflux.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   env = [
     "DATABASE_URL=postgres://${data.sops_file.secrets.data["miniflux.db.username"]}:${data.sops_file.secrets.data["miniflux.db.password"]}@postgres/miniflux?sslmode=disable",

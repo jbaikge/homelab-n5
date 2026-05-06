@@ -9,7 +9,7 @@ resource "docker_container" "paperless_ngx" {
   name     = "paperless-ngx"
   hostname = "paperless-ngx"
   image    = docker_image.paperless_ngx.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   env = [
     "PAPERLESS_ADMIN_PASSWORD=${data.sops_file.secrets.data["paperless.admin.password"]}",

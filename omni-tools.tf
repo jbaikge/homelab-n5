@@ -9,7 +9,7 @@ resource "docker_container" "omni_tools" {
   name     = "omni-tools"
   hostname = "omni-tools"
   image    = docker_image.omni_tools.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   labels {
     label = "traefik.enable"

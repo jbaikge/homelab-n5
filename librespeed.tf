@@ -9,7 +9,7 @@ resource "docker_container" "librespeed" {
   name     = "librespeed"
   hostname = "librespeed"
   image    = docker_image.librespeed.image_id
-  restart  = "unless-stopped"
+  restart  = local.restart
 
   labels {
     label = "traefik.enable"
