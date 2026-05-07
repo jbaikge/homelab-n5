@@ -16,7 +16,7 @@ customDNS:
     maple.${domain}: ${maple_ip}
     oak.${domain}: ${oak_ip}
     # App maps
-    birds.${domain}: ${hickory_ip}
+    birds.${domain}: ${oak_ip}
     databasus.${domain}: ${oak_ip}
     db.${domain}: ${ash_ip}
     docs.${domain}: ${oak_ip}
