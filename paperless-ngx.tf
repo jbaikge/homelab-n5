@@ -30,8 +30,8 @@ resource "docker_container" "paperless_ngx" {
     "PAPERLESS_TIKA_GOTENBERG_ENDPOINT=http://gotenberg:3000",
     "PAPERLESS_TIME_ZONE=${data.sops_file.secrets.data["location.timezone"]}",
     "PAPERLESS_URL=https://docs.${data.sops_file.secrets.data["domain.tld"]}",
-    "USERMAP_GID=1000",
-    "USERMAP_UID=1000",
+    "USERMAP_GID=3001",
+    "USERMAP_UID=3001",
   ]
 
   labels {
@@ -74,7 +74,7 @@ resource "docker_container" "paperless_ngx" {
 
   volumes {
     container_path = "/usr/src/paperless/consume"
-    host_path      = "/mnt/tank/apps/paperless/consume"
+    host_path      = "/mnt/tank/smb/paperless"
     read_only      = false
   }
 
