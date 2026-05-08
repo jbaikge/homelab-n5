@@ -21,7 +21,7 @@ customDNS:
     db.${domain}: ${ash_ip}
     docs.${domain}: ${oak_ip}
     git.${domain}: ${hickory_ip}
-    glance.${domain}: ${hickory_ip}
+    glance.${domain}: ${oak_ip}
     home.${domain}: ${maple_ip}
     homebox.${domain}: ${oak_ip}
     it-tools.${domain}: ${oak_ip}

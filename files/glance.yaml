@@ -1,0 +1,178 @@
+# Kanagawa Dark
+theme:
+  background-color: 240 13 14
+  primary-color: 51 33 68
+  negative-color: 358 100 68
+  contrast-multiplier: 1.2
+pages:
+  - name: Home
+    width: wide
+    desktop-navigation-width: wide
+    head-widgets:
+      - type: monitor
+        cache: 1m
+        sites:
+          - title: Adminer
+            icon: sh:adminer
+            url: https://db.${domain}
+          - title: BentoPDF
+            icon: sh:bentopdf
+            url: https://pdf.${domain}
+          - title: BirdNET
+            icon: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/birdnet.png
+            url: https://birds.${domain}
+          - title: Databasus
+            icon: sh:databasus
+            url: https://databasus.${domain}
+          - title: Dozzle
+            icon: sh:dozzle
+            url: https://logs.${domain}
+          - title: Forgejo
+            icon: sh:forgejo
+            url: https://git.${domain}
+          - title: Home Assistant
+            icon: sh:home-assistant
+            url: https://home.${domain}
+          - title: Homebox
+            icon: sh:homebox
+            url: https://homebox.${domain}
+          - title: IT Tools
+            icon: sh:it-tools
+            url: https://it-tools.${domain}
+          - title: Libre Speed
+            icon: sh:librespeed
+            url: http://librespeed.${domain}:16384
+          - title: Miniflux
+            icon: sh:miniflux
+            url: https://rss.${domain}
+          - title: Omni Tools
+            icon: sh:omnitools
+            url: https://omni-tools.${domain}
+          - title: Open Speed Test
+            icon: sh:openspeedtest
+            url: http://openspeed.${domain}:16385
+          - title: Open WebUI
+            icon: sh:open-webui
+            url: https://open-webui.${domain}
+          - title: Paperless
+            icon: sh:paperless-ngx
+            url: https://docs.${domain}
+          - title: Prometheus
+            icon: sh:prometheus
+            url: https://prometheus.${domain}
+          - title: Readeck
+            icon: sh:readeck
+            url: https://readeck.${domain}
+          - title: Traefik (Ash)
+            icon: sh:traefik
+            url: https://ash.${domain}
+            alt-status-codes:
+              - 401
+          - title: Traefik (Cherry)
+            icon: sh:traefik
+            url: https://cherry.${domain}
+            alt-status-codes:
+              - 401
+          - title: Traefik (Hickory)
+            icon: sh:traefik
+            url: https://hickory.${domain}
+            alt-status-codes:
+              - 401
+          - title: Traefik (Maple)
+            icon: sh:traefik
+            url: https://maple.${domain}
+            alt-status-codes:
+              - 401
+          - title: Traefik (Oak)
+            icon: sh:traefik
+            url: https://oak.${domain}
+            alt-status-codes:
+              - 401
+          - title: Wakapi
+            icon: sh:wakapi
+            url: https://waka.${domain}
+          - title: ZWave
+            icon: sh:z-wave-js-ui
+            url: https://zwave.${domain}
+    columns:
+      - size: small
+        widgets:
+          - type: rss
+            limit: 10
+            collapse-after: 3
+            cache: 12h
+            feeds:
+              - url: https://selfh.st/rss/
+                title: selfh.st
+                limit: 4
+              - url: https://ciechanow.ski/atom.xml
+              - url: https://www.joshwcomeau.com/rss.xml
+                title: Josh Comeau
+              - url: https://samwho.dev/rss.xml
+              - url: https://ishadeed.com/feed.xml
+                title: Ahmad Shadeed
+
+          - type: twitch-channels
+            channels:
+              - theprimeagen
+              - j_blow
+              - piratesoftware
+              - cohhcarnage
+              - christitustech
+              - EJ_SA
+
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+              - type: hacker-news
+              - type: lobsters
+
+          - type: videos
+            channels:
+              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UCsBjURrPoezykLs9EqgamOA # Fireship
+              - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
+              - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+
+          - type: group
+            widgets:
+              - type: reddit
+                subreddit: technology
+                show-thumbnails: true
+              - type: reddit
+                subreddit: selfhosted
+                show-thumbnails: true
+
+      - size: small
+        widgets:
+          - type: search
+            search-engine: duckduckgo
+            bangs:
+              - title: YouTube
+                shortcut: "!yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
+          - type: weather
+            location: Passapatanzy, Virginia, United States
+            units: imperial
+            hour-format: 24h
+            hide-location: true
+
+          - type: custom-api
+            title: Steam Specials
+            cache: 12h
+            url: https://store.steampowered.com/api/featuredcategories?cc=us
+            template: |
+              <ul class="list list-gap-10 collapsible-container" data-collapse-after="5">
+              {{ range .JSON.Array "specials.items" }}
+                <li>
+                  <a class="size-h4 color-highlight block text-truncate" href="https://store.steampowered.com/app/{{ .Int "id" }}/">{{ .String "name" }}</a>
+                  <ul class="list-horizontal-text">
+                    <li>{{ div (.Int "final_price" | toFloat) 100 | printf "$%.2f" }}</li>
+                    {{ $discount := .Int "discount_percent" }}
+                    <li{{ if ge $discount 40 }} class="color-positive"{{ end }}>{{ $discount }}% off</li>
+                  </ul>
+                </li>
+              {{ end }}
+              </ul>
