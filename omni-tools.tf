@@ -30,4 +30,8 @@ resource "docker_container" "omni_tools" {
     label = "traefik.http.services.omni_tools.loadbalancer.server.port"
     value = "80"
   }
+
+  networks_advanced {
+    name = docker_network.traefik[var.apps.omni_tools].id
+  }
 }

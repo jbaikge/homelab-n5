@@ -30,4 +30,8 @@ resource "docker_container" "it_tools" {
     label = "traefik.http.services.it_tools.loadbalancer.server.port"
     value = "80"
   }
+
+  networks_advanced {
+    name = docker_network.traefik[var.apps.it_tools].id
+  }
 }
