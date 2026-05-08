@@ -25,14 +25,15 @@ customDNS:
     home.${domain}: ${maple_ip}
     homebox.${domain}: ${oak_ip}
     it-tools.${domain}: ${oak_ip}
-    logs.${domain}: ${oak_ip}
     librespeed.${domain}: ${oak_ip}
+    logs.${domain}: ${oak_ip}
     omni-tools.${domain}: ${oak_ip}
+    open-webui.${domain}: ${oak_ip}
     openspeed.${domain}: ${oak_ip}
     pdf.${domain}: ${oak_ip}
     prometheus.${domain}: ${ash_ip}
-    rss.${domain}: ${oak_ip}
     readeck.${domain}: ${oak_ip}
+    rss.${domain}: ${oak_ip}
     waka.${domain}: ${oak_ip}
     zwave.${domain}: ${maple_ip}
 

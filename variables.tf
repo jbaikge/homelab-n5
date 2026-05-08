@@ -41,8 +41,10 @@ variable "apps" {
     librespeed     = string
     miniflux       = string
     mysql          = string
+    ollama         = string
     omni_tools     = string
     openspeedtest  = string
+    open_webui     = string
     paperless_ngx  = string
     postgres       = string
     prometheus     = string
