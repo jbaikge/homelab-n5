@@ -62,7 +62,7 @@ resource "docker_container" "paperless_gpt" {
 
   labels {
     label = "traefik.http.services.paperless_gpt.loadbalancer.server.port"
-    value = "3002"
+    value = "8080"
   }
 
   networks_advanced {
