@@ -45,6 +45,7 @@ variable "apps" {
     omni_tools     = string
     openspeedtest  = string
     open_webui     = string
+    paperless_gpt  = string
     paperless_ngx  = string
     postgres       = string
     prometheus     = string

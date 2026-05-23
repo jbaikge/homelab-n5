@@ -31,6 +31,7 @@ customDNS:
     open-webui.${domain}: ${oak_ip}
     openspeed.${domain}: ${oak_ip}
     pdf.${domain}: ${oak_ip}
+    paperless-gpt.${domain}: ${oak_ip}
     prometheus.${domain}: ${ash_ip}
     readeck.${domain}: ${oak_ip}
     rss.${domain}: ${oak_ip}
