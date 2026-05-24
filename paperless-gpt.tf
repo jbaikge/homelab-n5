@@ -88,4 +88,8 @@ resource "docker_container" "paperless_gpt" {
     host_path      = "/mnt/tank/apps/paperless/prompts"
     read_only      = false
   }
+
+  lifecycle {
+    enabled = false
+  }
 }
