@@ -37,7 +37,7 @@ resource "docker_container" "paperless_gpt" {
     "PDF_OCR_COMPLETE_TAG=paperless-gpt-ocr-complete",
     "PDF_UPLOAD=false",
 
-    "LOG_LEVEL=DEBUG",
+    "LOG_LEVEL=INFO", # INFO DEBUG
   ]
 
   depends_on = [
