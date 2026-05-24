@@ -18,9 +18,9 @@ customDNS:
     # App maps
     birds.${domain}: ${oak_ip}
     databasus.${domain}: ${oak_ip}
-    db.${domain}: ${ash_ip}
+    db.${domain}: ${oak_ip}
     docs.${domain}: ${oak_ip}
-    git.${domain}: ${hickory_ip}
+    git.${domain}: ${oak_ip}
     glance.${domain}: ${oak_ip}
     home.${domain}: ${maple_ip}
     homebox.${domain}: ${oak_ip}
