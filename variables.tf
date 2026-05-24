@@ -33,6 +33,7 @@ variable "apps" {
     dozzle         = string
     dozzle_agent   = list(string)
     forgejo        = string
+    gitea          = string
     glance         = string
     gotenberg      = string
     home_assistant = string
