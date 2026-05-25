@@ -22,7 +22,7 @@ customDNS:
     docs.${domain}: ${oak_ip}
     git.${domain}: ${oak_ip}
     glance.${domain}: ${oak_ip}
-    home.${domain}: ${maple_ip}
+    home.${domain}: ${oak_ip}
     homebox.${domain}: ${oak_ip}
     it-tools.${domain}: ${oak_ip}
     librespeed.${domain}: ${oak_ip}
@@ -36,7 +36,7 @@ customDNS:
     readeck.${domain}: ${oak_ip}
     rss.${domain}: ${oak_ip}
     waka.${domain}: ${oak_ip}
-    zwave.${domain}: ${maple_ip}
+    zwave.${domain}: ${oak_ip}
 
 conditional:
   fallbackUpstream: false

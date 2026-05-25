@@ -18,6 +18,12 @@ resource "docker_network" "dns" {
   ipv6     = true
 }
 
+resource "docker_network" "home_assistant" {
+  provider = docker.hosts[var.apps.home_assistant]
+  name     = "home-assistant"
+  ipv6     = false
+}
+
 resource "docker_network" "ollama" {
   provider = docker.hosts[var.apps.ollama]
   name     = "ollama"
