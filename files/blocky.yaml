@@ -32,7 +32,7 @@ customDNS:
     openspeed.${domain}: ${oak_ip}
     pdf.${domain}: ${oak_ip}
     paperless-gpt.${domain}: ${oak_ip}
-    prometheus.${domain}: ${ash_ip}
+    prometheus.${domain}: ${oak_ip}
     readeck.${domain}: ${oak_ip}
     rss.${domain}: ${oak_ip}
     waka.${domain}: ${oak_ip}

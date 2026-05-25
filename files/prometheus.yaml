@@ -1,0 +1,36 @@
+scrape_configs:
+  - job_name: "hass"
+    scrape_interval: 1m
+    metrics_path: /api/prometheus
+
+    authorization:
+      credentials: "${home_assistant_token}"
+
+    scheme: https
+    static_configs:
+      - targets:
+          - "${home_assistant_url}"
+
+  - job_name: "waka-personal"
+    scrape_interval: 1m
+    metrics_path: /api/metrics
+
+    authorization:
+      credentials: "${waka_personal_token}"
+
+    scheme: https
+    static_configs:
+      - targets:
+          - "${waka_personal_url}"
+
+  - job_name: "waka-work"
+    scrape_interval: 1m
+    metrics_path: /api/metrics
+
+    authorization:
+      credentials: "${waka_work_token}"
+
+    scheme: https
+    static_configs:
+      - targets:
+          - "${waka_work_url}"
