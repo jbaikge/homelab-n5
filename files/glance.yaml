@@ -27,8 +27,8 @@ pages:
           - title: Dozzle
             icon: sh:dozzle
             url: https://logs.${domain}
-          - title: Forgejo
-            icon: sh:forgejo
+          - title: Gitea
+            icon: sh:gitea
             url: https://git.${domain}
           - title: Home Assistant
             icon: sh:home-assistant
@@ -63,26 +63,6 @@ pages:
           - title: Readeck
             icon: sh:readeck
             url: https://readeck.${domain}
-          - title: Traefik (Ash)
-            icon: sh:traefik
-            url: https://ash.${domain}
-            alt-status-codes:
-              - 401
-          - title: Traefik (Cherry)
-            icon: sh:traefik
-            url: https://cherry.${domain}
-            alt-status-codes:
-              - 401
-          - title: Traefik (Hickory)
-            icon: sh:traefik
-            url: https://hickory.${domain}
-            alt-status-codes:
-              - 401
-          - title: Traefik (Maple)
-            icon: sh:traefik
-            url: https://maple.${domain}
-            alt-status-codes:
-              - 401
           - title: Traefik (Oak)
             icon: sh:traefik
             url: https://oak.${domain}
