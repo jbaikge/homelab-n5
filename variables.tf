@@ -38,6 +38,7 @@ variable "apps" {
     gotenberg      = string
     home_assistant = string
     homebox        = string
+    influxdb       = string
     it_tools       = string
     librespeed     = string
     miniflux       = string
