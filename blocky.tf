@@ -68,6 +68,13 @@ resource "docker_container" "blocky" {
     read_only      = true
   }
 
+  lifecycle {
+    ignore_changes = [
+      # Waiting for PR to fix port ordering
+      ports,
+    ]
+  }
+
   depends_on = [
     docker_container.unbound,
   ]
