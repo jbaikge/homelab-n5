@@ -36,6 +36,9 @@ pages:
           - title: Homebox
             icon: sh:homebox
             url: https://homebox.${domain}
+          - title: InfluxDB
+            icon: sh:influxdb
+            url: https://influxdb.${domain}
           - title: IT Tools
             icon: sh:it-tools
             url: https://it-tools.${domain}
@@ -63,6 +66,9 @@ pages:
           - title: Readeck
             icon: sh:readeck
             url: https://readeck.${domain}
+          - title: Scrutiny
+            icon: sh:scrutiny
+            url: https://scrutiny.${domain}
           - title: Traefik (Oak)
             icon: sh:traefik
             url: https://oak.${domain}
