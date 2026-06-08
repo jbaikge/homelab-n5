@@ -36,6 +36,12 @@ resource "docker_network" "paperless" {
   ipv6     = true
 }
 
+resource "docker_network" "scrutiny" {
+  provider = docker.hosts[var.apps.scrutiny_web]
+  name     = "scrutiny"
+  ipv6     = false
+}
+
 resource "docker_network" "traefik" {
   for_each = toset(var.apps.traefik)
   provider = docker.hosts[each.key]

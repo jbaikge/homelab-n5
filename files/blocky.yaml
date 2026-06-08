@@ -36,6 +36,7 @@ customDNS:
     prometheus.${domain}: ${oak_ip}
     readeck.${domain}: ${oak_ip}
     rss.${domain}: ${oak_ip}
+    scrutiny.${domain}: ${oak_ip}
     waka.${domain}: ${oak_ip}
     zwave.${domain}: ${oak_ip}
 
