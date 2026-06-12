@@ -12,6 +12,7 @@ resource "docker_container" "homebox" {
   restart  = local.restart
 
   env = [
+    "TZ=${data.sops_file.secrets.data["location.timezone"]}",
   ]
 
   labels {
