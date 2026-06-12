@@ -1,6 +1,6 @@
 resource "docker_image" "glance" {
   provider     = docker.hosts[var.apps.glance]
-  name         = "glanceapp/glance:v0.8.4"
+  name         = "glanceapp/glance:v0.8.5"
   keep_locally = false
 }
 
