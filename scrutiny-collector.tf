@@ -21,7 +21,7 @@ resource "docker_container" "scrutiny_collector" {
 
   capabilities {
     add = [
-      "SYS_RAWIO",
+      "CAP_SYS_RAWIO",
     ]
   }
 
