@@ -36,6 +36,7 @@ variable "apps" {
     gitea              = string
     glance             = string
     gotenberg          = string
+    grafana            = string
     home_assistant     = string
     homebox            = string
     influxdb           = string
