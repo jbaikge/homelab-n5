@@ -30,6 +30,9 @@ pages:
           - title: Gitea
             icon: sh:gitea
             url: https://git.${domain}
+          - title: Grafana
+            icon: sh:grafana
+            url: https://grafana.${domain}
           - title: Home Assistant
             icon: sh:home-assistant
             url: https://home.${domain}
