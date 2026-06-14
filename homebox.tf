@@ -1,6 +1,6 @@
 resource "docker_image" "homebox" {
   provider     = docker.hosts[var.apps.homebox]
-  name         = "ghcr.io/sysadminsmedia/homebox:0.26.1"
+  name         = "ghcr.io/sysadminsmedia/homebox:0.26.2"
   keep_locally = false
 }
 
