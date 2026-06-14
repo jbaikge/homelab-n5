@@ -26,6 +26,7 @@ customDNS:
     home.${domain}: ${oak_ip}
     homebox.${domain}: ${oak_ip}
     influxdb.${domain}: ${oak_ip}
+    iperf3.${domain}: ${oak_ip}
     it-tools.${domain}: ${oak_ip}
     librespeed.${domain}: ${oak_ip}
     logs.${domain}: ${oak_ip}

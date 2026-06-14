@@ -40,6 +40,7 @@ variable "apps" {
     home_assistant     = string
     homebox            = string
     influxdb           = string
+    iperf3             = string
     it_tools           = string
     librespeed         = string
     miniflux           = string
