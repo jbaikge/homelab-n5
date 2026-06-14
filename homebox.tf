@@ -1,6 +1,6 @@
 resource "docker_image" "homebox" {
   provider     = docker.hosts[var.apps.homebox]
-  name         = "ghcr.io/sysadminsmedia/homebox:0.25.0"
+  name         = "ghcr.io/sysadminsmedia/homebox:0.26.1"
   keep_locally = false
 }
 
@@ -12,6 +12,7 @@ resource "docker_container" "homebox" {
   restart  = local.restart
 
   env = [
+    "HBOX_AUTH_API_KEY_PEPPER=${data.sops_file.secrets.data["homebox.pepper"]}",
     "TZ=${data.sops_file.secrets.data["location.timezone"]}",
   ]
 
@@ -36,7 +37,7 @@ resource "docker_container" "homebox" {
   }
 
   networks_advanced {
-    name = docker_network.traefik[var.apps.bentopdf].id
+    name = docker_network.traefik[var.apps.homebox].id
   }
 
   volumes {
