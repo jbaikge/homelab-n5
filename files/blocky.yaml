@@ -68,6 +68,9 @@ ports:
   dns: 53
   http: 4000
 
+clientLookup:
+  upstream: 10.100.6.1
+
 prometheus:
   enable: true
   path: /metrics
