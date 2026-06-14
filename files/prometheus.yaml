@@ -34,3 +34,12 @@ scrape_configs:
     static_configs:
       - targets:
           - "${waka_work_url}"
+
+  - job_name: "blocky"
+    scrape_interval: 1m
+    metrics_path: /metrics
+
+    scheme: http
+    static_configs:
+      - targets:
+          - "${blocky_url}"

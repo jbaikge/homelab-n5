@@ -18,6 +18,10 @@ resource "docker_container" "blocky" {
   ]
 
   networks_advanced {
+    name = docker_network.database.id
+  }
+
+  networks_advanced {
     name = docker_network.dns[each.key].id
   }
 

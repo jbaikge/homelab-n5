@@ -68,6 +68,10 @@ ports:
   dns: 53
   http: 4000
 
+prometheus:
+  enable: true
+  path: /metrics
+
 log:
   level: info
   format: json
