@@ -1,6 +1,6 @@
 resource "docker_image" "gitea" {
   provider     = docker.hosts[var.apps.gitea]
-  name         = "docker.gitea.com/gitea:1.26.2"
+  name         = "docker.gitea.com/gitea:1.26.3"
   keep_locally = false
 }
 
