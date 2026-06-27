@@ -1,6 +1,6 @@
 resource "docker_image" "miniflux" {
   provider     = docker.hosts[var.apps.miniflux]
-  name         = "ghcr.io/miniflux/miniflux:2.3.0"
+  name         = "ghcr.io/miniflux/miniflux:2.3.2"
   keep_locally = false
 }
 
