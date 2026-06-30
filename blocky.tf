@@ -1,7 +1,7 @@
 resource "docker_image" "blocky" {
   for_each     = toset(var.apps.blocky)
   provider     = docker.hosts[each.key]
-  name         = "ghcr.io/0xerr0r/blocky:v0.28.1"
+  name         = "ghcr.io/0xerr0r/blocky:v0.33.0"
   keep_locally = false
 }
 
