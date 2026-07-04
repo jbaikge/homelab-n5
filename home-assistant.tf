@@ -1,6 +1,6 @@
 resource "docker_image" "home_assistant" {
   provider     = docker.hosts[var.apps.home_assistant]
-  name         = "ghcr.io/home-assistant/home-assistant:2026.4.4"
+  name         = "ghcr.io/home-assistant/home-assistant:2026.7.1"
   keep_locally = false
 }
 
