@@ -19,6 +19,7 @@ resource "docker_container" "gitea" {
     "GITEA__database__NAME=${data.sops_file.secrets.data["gitea.db.database"]}",
     "GITEA__database__USER=${data.sops_file.secrets.data["gitea.db.username"]}",
     "GITEA__database__PASSWD=${data.sops_file.secrets.data["gitea.db.password"]}",
+    "GITEA__server__SSH_PORT=2222",
   ]
 
   labels {
@@ -47,6 +48,13 @@ resource "docker_container" "gitea" {
 
   networks_advanced {
     name = docker_network.traefik[var.apps.gitea].id
+  }
+
+  ports {
+    internal = 22
+    external = 2222
+    ip       = var.hosts[var.apps.gitea].service_ipv4
+    protocol = "tcp"
   }
 
   volumes {
