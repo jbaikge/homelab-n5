@@ -1,6 +1,6 @@
 resource "docker_image" "databasus" {
   provider     = docker.hosts[var.apps.databasus]
-  name         = "databasus/databasus:v3.46.0"
+  name         = "ghcr.io/databasus/databasus:v3.51.0"
   keep_locally = false
 }
 
