@@ -32,6 +32,10 @@ resource "docker_container" "home_assistant" {
   }
 
   networks_advanced {
+    name = docker_network.database.id
+  }
+
+  networks_advanced {
     name = docker_network.home_assistant.id
   }
 
