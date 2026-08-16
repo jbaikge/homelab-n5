@@ -1,6 +1,6 @@
 resource "docker_image" "ollama" {
   provider     = docker.hosts[var.apps.ollama]
-  name         = "ollama/ollama:0.23.2-rocm"
+  name         = "ollama/ollama:0.32.12-rocm"
   keep_locally = false
 }
 
