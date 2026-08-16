@@ -14,6 +14,16 @@ resource "docker_container" "paperless_ngx" {
   env = [
     "PAPERLESS_ADMIN_PASSWORD=${data.sops_file.secrets.data["paperless.admin.password"]}",
     "PAPERLESS_ADMIN_USER=${data.sops_file.secrets.data["paperless.admin.username"]}",
+    "PAPERLESS_AI_ENABLED=true",
+    "PAPERLESS_AI_LLM_EMBEDDING_BACKEND=ollama",
+    "PAPERLESS_AI_LLM_EMBEDDING_MODEL=embeddinggemma",
+    "PAPERLESS_AI_LLM_EMBEDDING_ENDPOINT=http://ollama:11434",
+    "PAPERLESS_AI_LLM_EMBEDDING_CHUNK_SIZE=1024",
+    "PAPERLESS_AI_CONTEXT_SIZE=8192",
+    "PAPERLESS_AI_REQUEST_TIMEOUT=300", # Default 120
+    "PAPERLESS_AI_LLM_BACKEND=ollama",
+    "PAPERLESS_AI_LLM_MODEL=llama3.1:8b",
+    "PAPERLESS_AI_LLM_ENDPOINT=http://ollama:11434",
     # "PAPERLESS_CONSUMPTION_DIR=/srv/consume",
     # "PAPERLESS_DATA_DIR=/srv/data",
     "PAPERLESS_DATE_ORDER=MDY",
@@ -58,6 +68,10 @@ resource "docker_container" "paperless_ngx" {
 
   networks_advanced {
     name = docker_network.database.id
+  }
+
+  networks_advanced {
+    name = docker_network.ollama.id
   }
 
   networks_advanced {
