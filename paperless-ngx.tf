@@ -1,6 +1,6 @@
 resource "docker_image" "paperless_ngx" {
   provider     = docker.hosts[var.apps.paperless_ngx]
-  name         = "ghcr.io/paperless-ngx/paperless-ngx:2.20.15"
+  name         = "ghcr.io/paperless-ngx/paperless-ngx:3.0.5"
   keep_locally = false
 }
 
@@ -17,6 +17,7 @@ resource "docker_container" "paperless_ngx" {
     # "PAPERLESS_CONSUMPTION_DIR=/srv/consume",
     # "PAPERLESS_DATA_DIR=/srv/data",
     "PAPERLESS_DATE_ORDER=MDY",
+    "PAPERLESS_DBENGINE=postgresql",
     "PAPERLESS_DBHOST=postgres",
     "PAPERLESS_DBNAME=${data.sops_file.secrets.data["paperless.db.database"]}",
     "PAPERLESS_DBPASS=${data.sops_file.secrets.data["paperless.db.password"]}",
@@ -25,6 +26,7 @@ resource "docker_container" "paperless_ngx" {
     "PAPERLESS_OCR_USER_ARGS={\"continue_on_soft_render_error\": true}",
     "PAPERLESS_REDIS=redis://redis:6379",
     "PAPERLESS_REDIS_PREFIX=paperless",
+    "PAPERLESS_SECRET_KEY=${data.sops_file.secrets.data["paperless.secret_key"]}",
     "PAPERLESS_TIKA_ENABLED=1",
     "PAPERLESS_TIKA_ENDPOINT=http://tika:9998",
     "PAPERLESS_TIKA_GOTENBERG_ENDPOINT=http://gotenberg:3000",
