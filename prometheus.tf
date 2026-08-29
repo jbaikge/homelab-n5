@@ -1,6 +1,6 @@
 resource "docker_image" "prometheus" {
   provider     = docker.hosts[var.apps.prometheus]
-  name         = "docker.io/prom/prometheus:v3.11.3"
+  name         = "docker.io/prom/prometheus:v3.14.0"
   keep_locally = false
 }
 
