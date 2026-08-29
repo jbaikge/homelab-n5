@@ -1,7 +1,7 @@
 resource "docker_image" "traefik" {
   for_each     = toset(var.apps.traefik)
   provider     = docker.hosts[each.key]
-  name         = "traefik:v3.7.12"
+  name         = "ghcr.io/traefik/traefik:v3.7.12"
   keep_locally = false
 }
 
