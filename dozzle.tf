@@ -1,6 +1,6 @@
 locals {
   dozzle = {
-    version = "v10.7.2"
+    version = "v10.7.5"
   }
 }
 
