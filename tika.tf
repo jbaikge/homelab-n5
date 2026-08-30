@@ -1,6 +1,6 @@
 resource "docker_image" "tika" {
   provider     = docker.hosts[var.apps.tika]
-  name         = "docker.io/apache/tika:3.3.0.0-full"
+  name         = "docker.io/apache/tika:3.3.1.0-full"
   keep_locally = false
 }
 
