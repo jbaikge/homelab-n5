@@ -14,7 +14,7 @@ resource "docker_container" "paperless_ngx" {
   env = [
     "PAPERLESS_ADMIN_PASSWORD=${data.sops_file.secrets.data["paperless.admin.password"]}",
     "PAPERLESS_ADMIN_USER=${data.sops_file.secrets.data["paperless.admin.username"]}",
-    "PAPERLESS_AI_ENABLED=false",
+    "PAPERLESS_AI_ENABLED=true",
     "PAPERLESS_AI_LLM_EMBEDDING_BACKEND=ollama",
     "PAPERLESS_AI_LLM_EMBEDDING_MODEL=embeddinggemma",
     "PAPERLESS_AI_LLM_EMBEDDING_ENDPOINT=http://ollama:11434",
