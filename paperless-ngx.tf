@@ -22,7 +22,8 @@ resource "docker_container" "paperless_ngx" {
     "PAPERLESS_AI_CONTEXT_SIZE=8192",
     "PAPERLESS_AI_REQUEST_TIMEOUT=300", # Default 120
     "PAPERLESS_AI_LLM_BACKEND=ollama",
-    "PAPERLESS_AI_LLM_MODEL=llama3.2:3b",
+    # "PAPERLESS_AI_LLM_MODEL=llama3.2:3b",
+    "PAPERLESS_AI_LLM_MODEL=gemma4:26b",
     "PAPERLESS_AI_LLM_ENDPOINT=http://ollama:11434",
     # "PAPERLESS_CONSUMPTION_DIR=/srv/consume",
     # "PAPERLESS_DATA_DIR=/srv/data",
