@@ -1,6 +1,6 @@
 resource "docker_image" "paperless_ngx" {
   provider     = docker.hosts[var.apps.paperless_ngx]
-  name         = "ghcr.io/paperless-ngx/paperless-ngx:3.1.1"
+  name         = "ghcr.io/paperless-ngx/paperless-ngx:3.1.2"
   keep_locally = false
 }
 
