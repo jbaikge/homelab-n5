@@ -14,6 +14,7 @@ resource "docker_container" "gitea" {
   env = [
     "USER_UID=1000",
     "USER_GID=1000",
+    "GITEA__actions__ENABLED=true",
     "GITEA__database__DB_TYPE=postgres",
     "GITEA__database__HOST=postgres:5432",
     "GITEA__database__NAME=${data.sops_file.secrets.data["gitea.db.database"]}",
@@ -44,6 +45,10 @@ resource "docker_container" "gitea" {
 
   networks_advanced {
     name = docker_network.database.id
+  }
+
+  networks_advanced {
+    name = docker_network.gitea.id
   }
 
   networks_advanced {

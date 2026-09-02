@@ -34,6 +34,7 @@ variable "apps" {
     dozzle_agent       = list(string)
     forgejo            = string
     gitea              = string
+    gitea_runner       = string
     glance             = string
     gotenberg          = string
     grafana            = string
