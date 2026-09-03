@@ -25,6 +25,7 @@ customDNS:
     grafana.${domain}: ${oak_ip}
     home.${domain}: ${oak_ip}
     homebox.${domain}: ${oak_ip}
+    homebox-calendar.${domain}: ${oak_ip}
     influxdb.${domain}: ${oak_ip}
     iperf3.${domain}: ${oak_ip}
     it-tools.${domain}: ${oak_ip}
