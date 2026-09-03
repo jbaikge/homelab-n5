@@ -37,6 +37,10 @@ resource "docker_container" "homebox" {
   }
 
   networks_advanced {
+    name = docker_network.homebox.id
+  }
+
+  networks_advanced {
     name = docker_network.traefik[var.apps.homebox].id
   }
 

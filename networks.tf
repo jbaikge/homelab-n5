@@ -30,6 +30,12 @@ resource "docker_network" "home_assistant" {
   ipv6     = false
 }
 
+resource "docker_network" "homebox" {
+  provider = docker.hosts[var.apps.homebox]
+  name     = "homebox-calendar"
+  ipv6     = false
+}
+
 resource "docker_network" "ollama" {
   provider = docker.hosts[var.apps.ollama]
   name     = "ollama"

@@ -40,6 +40,7 @@ variable "apps" {
     grafana            = string
     home_assistant     = string
     homebox            = string
+    homebox_calendar   = string
     influxdb           = string
     iperf3             = string
     it_tools           = string
