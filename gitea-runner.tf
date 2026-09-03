@@ -12,8 +12,12 @@ resource "docker_container" "gitea_runner" {
   restart    = local.restart
   privileged = true
 
+  dns = [
+    for host in var.apps.blocky : var.hosts[host].service_ipv4
+  ]
+
   env = [
-    "GITEA_INSTANCE_URL=http://gitea:3000",
+    "GITEA_INSTANCE_URL=https://git.${data.sops_file.secrets.data["domain.tld"]}",
     "GITEA_RUNNER_REGISTRATION_TOKEN=${data.sops_file.secrets.data["gitea.runner.token"]}",
   ]
 
