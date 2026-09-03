@@ -40,6 +40,10 @@ resource "docker_container" "home_assistant" {
   }
 
   networks_advanced {
+    name = docker_network.homebox.id
+  }
+
+  networks_advanced {
     name = docker_network.cloudflared[var.apps.home_assistant].id
   }
 
