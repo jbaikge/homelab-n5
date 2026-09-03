@@ -56,6 +56,7 @@ variable "apps" {
     prometheus         = string
     readeck            = string
     redis              = string
+    registry           = string
     scrutiny_collector = list(string)
     scrutiny_web       = string
     tika               = string
