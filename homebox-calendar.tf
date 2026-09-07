@@ -1,6 +1,6 @@
 resource "docker_image" "homebox_calendar" {
   provider     = docker.hosts[var.apps.homebox_calendar]
-  name         = "registry.${data.sops_file.secrets.data["domain.tld"]}/homebox-calendar:v0.0.0"
+  name         = "registry.${data.sops_file.secrets.data["domain.tld"]}/homebox-calendar:v0.0.1"
   keep_locally = false
 }
 
