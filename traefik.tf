@@ -37,7 +37,7 @@ resource "docker_container" "traefik" {
     "--certificatesresolvers.le.acme.storage=/letsencrypt/acme.json",
     "--certificatesresolvers.le.acme.dnschallenge=true",
     "--certificatesresolvers.le.acme.dnschallenge.provider=cloudflare",
-    "--certificatesresolvers.le.acme.dnschallenge.delaybeforecheck=5",
+    "--certificatesresolvers.le.acme.dnschallenge.propagation.delaybeforechecks=5",
     "--certificatesresolvers.le.acme.dnschallenge.resolvers=1.1.1.1:53,8.8.8.8:53",
 
     # Providers
@@ -94,6 +94,22 @@ resource "docker_container" "traefik" {
   labels {
     label = "traefik.http.routers.dashboard.middlewares"
     value = "dashboard-auth@docker"
+  }
+
+  # OctoPrint on ender-pi.lan
+  labels {
+    label = "traefik.http.routers.octoprint.rule"
+    value = nonsensitive("Host(`octoprint.${data.sops_file.secrets.data["domain.tld"]}`)")
+  }
+
+  labels {
+    label = "traefik.http.routers.octoprint.entrypoints"
+    value = "websecure"
+  }
+
+  labels {
+    label = "traefik.http.services.octoprint.loadbalancer.server.url"
+    value = "http://ender-pi.lan"
   }
 
   networks_advanced {

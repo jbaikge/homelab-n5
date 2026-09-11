@@ -31,6 +31,7 @@ customDNS:
     it-tools.${domain}: ${oak_ip}
     librespeed.${domain}: ${oak_ip}
     logs.${domain}: ${oak_ip}
+    octoprint.${domain}: ${oak_ip}
     omni-tools.${domain}: ${oak_ip}
     open-webui.${domain}: ${oak_ip}
     openspeed.${domain}: ${oak_ip}
