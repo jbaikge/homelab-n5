@@ -1,6 +1,6 @@
 resource "docker_image" "adminer" {
   provider     = docker.hosts[var.apps.adminer]
-  name         = "adminer:6.0.2"
+  name         = "adminer:6.0.1" # waiting for 6.0.2
   keep_locally = false
 }
 
