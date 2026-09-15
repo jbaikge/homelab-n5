@@ -1,6 +1,6 @@
 resource "docker_image" "wakapi" {
   provider     = docker.hosts[var.apps.wakapi]
-  name         = "ghcr.io/muety/wakapi:2.17.3"
+  name         = "ghcr.io/muety/wakapi:2.18.0"
   keep_locally = false
 }
 
