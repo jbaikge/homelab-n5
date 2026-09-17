@@ -1,6 +1,6 @@
 resource "docker_image" "readeck" {
   provider     = docker.hosts[var.apps.readeck]
-  name         = "codeberg.org/readeck/readeck:0.22.3"
+  name         = "codeberg.org/readeck/readeck:0.23.4"
   keep_locally = false
 }
 
