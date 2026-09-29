@@ -1,6 +1,6 @@
 resource "docker_image" "grafana" {
   provider     = docker.hosts[var.apps.grafana]
-  name         = "grafana/grafana:13.1.4"
+  name         = "grafana/grafana:13.2.3"
   keep_locally = false
 }
 
