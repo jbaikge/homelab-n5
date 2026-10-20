@@ -1,6 +1,6 @@
 resource "docker_image" "omni_tools" {
   provider     = docker.hosts[var.apps.omni_tools]
-  name         = "iib0011/omni-tools:0.6.0"
+  name         = "iib0011/omni-tools:0.7.0"
   keep_locally = false
 }
 
