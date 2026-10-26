@@ -1,6 +1,6 @@
 resource "docker_image" "open_webui" {
   provider     = docker.hosts[var.apps.open_webui]
-  name         = "ghcr.io/open-webui/open-webui:v0.12.3"
+  name         = "ghcr.io/open-webui/open-webui:v0.12.4"
   keep_locally = false
 }
 
