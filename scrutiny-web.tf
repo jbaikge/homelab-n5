@@ -1,6 +1,6 @@
 resource "docker_image" "scrutiny_web" {
   provider     = docker.hosts[var.apps.scrutiny_web]
-  name         = "ghcr.io/analogj/scrutiny:v0.9.2-web"
+  name         = "ghcr.io/analogj/scrutiny:v0.10.0-web"
   keep_locally = false
 }
 

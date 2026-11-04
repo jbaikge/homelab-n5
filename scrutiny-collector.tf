@@ -1,7 +1,7 @@
 resource "docker_image" "scrutiny_collector" {
   for_each     = toset(var.apps.scrutiny_collector)
   provider     = docker.hosts[each.key]
-  name         = "ghcr.io/analogj/scrutiny:v0.9.2-collector"
+  name         = "ghcr.io/analogj/scrutiny:v0.10.0-collector"
   keep_locally = false
 }
 
